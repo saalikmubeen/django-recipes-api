@@ -11,3 +11,36 @@ services:
     command: >
       sh -c "python manage.py migrate &&
             python manage.py runserver 0.0.0.0:8000"
+    environment:
+      - DB_HOST=db
+      - DB_NAME=recipes_api
+      - DB_USER=postgres
+      - DB_PASSWORD=supersecretpassword
+      - DB_PORT=5432
+    depends_on:
+      - db
+    links:
+      - db:db
+    networks:
+      - djangonetwork
+
+  db:
+    image: postgres:13.0-alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=supersecretpassword
+      - POSTGRES_DB=recipes_api
+    ports:
+      - 5432:5432
+    networks:
+      - djangonetwork
+    
+
+volumes:
+  postgres_data:
+
+networks:
+      djangonetwork:
+          driver: bridge
