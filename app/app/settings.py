@@ -141,3 +141,7 @@ AUTH_USER_MODEL = 'shared.User'
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = '/vol/web/media' # path inside the docker container
+STATIC_ROOT = '/vol/web/static'
