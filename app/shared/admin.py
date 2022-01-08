@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
-from .models import User, Tag
+from .models import User, Tag, Ingredient
 
 
 # Register your models here.
@@ -27,3 +27,4 @@ class CustomUserAdmin(UserAdmin):
 
 admin.site.register(User, CustomUserAdmin)
 admin.site.register(Tag)
+admin.site.register(Ingredient)
