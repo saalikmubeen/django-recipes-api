@@ -1,12 +1,13 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from .views import TagsViewSet, IngredientsViewSet
+from .views import TagsViewSet, IngredientsViewSet, RecipeViewSet
 
 
 # Create a router and register our viewsets with it.
 router = DefaultRouter()
 router.register('tags', TagsViewSet) # /api/recipes/tags/
 router.register("ingredients", IngredientsViewSet) # /api/recipes/ingredients/
+router.register("recipes", RecipeViewSet) # /api/recipes/recipes/, /api/recipes/recipes/id/
 
 # The API URLs are now determined automatically by the router.
 urlpatterns = [
