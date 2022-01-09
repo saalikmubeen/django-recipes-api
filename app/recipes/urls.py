@@ -7,7 +7,7 @@ from .views import TagsViewSet, IngredientsViewSet, RecipeViewSet
 router = DefaultRouter()
 router.register('tags', TagsViewSet) # /api/recipes/tags/
 router.register("ingredients", IngredientsViewSet) # /api/recipes/ingredients/
-router.register("recipes", RecipeViewSet) # /api/recipes/recipes/, /api/recipes/recipes/id/
+router.register("recipes", RecipeViewSet) # /api/recipes/recipes/, /api/recipes/recipes/id/, /api/recipes/recipes/id/upload-image/
 
 # The API URLs are now determined automatically by the router.
 urlpatterns = [
