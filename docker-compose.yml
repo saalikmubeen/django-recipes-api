@@ -8,6 +8,8 @@ services:
       - 8000:8000
     volumes:
       - ./app:/app
+    container_name: django_api_container
+    image: app:django_api
     command: >
       sh -c "python manage.py migrate &&
             python manage.py runserver 0.0.0.0:8000"
