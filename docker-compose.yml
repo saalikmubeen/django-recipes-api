@@ -25,6 +25,8 @@ services:
       - db:db
     networks:
       - djangonetwork
+#     env_file:
+#       - ./.env/local.env
 
   db:
     image: postgres:13.0-alpine
