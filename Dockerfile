@@ -1,6 +1,8 @@
 FROM python:3.7-alpine
 
 ENV PYTHONDONTWRITEBYTECODE=1
+
+# To get django logs or print statements directly in our container terminal
 ENV PYTHONUNBUFFERED 1
 
 # Install postgres client and jpeg dev
